@@ -292,7 +292,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
+  margin-top: 45px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -312,7 +312,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner img {
   animation: updown 3s linear infinite;
   border-radius: 50%;
-  height: 75vh;
+  height: 70vh;
 }
 
 @keyframes updown {
@@ -334,10 +334,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Skills Css ************/
-.skill {
+ .skill {
   padding: 0 0 50px 0;
   position: relative;
 }
+
 
 .skill-bx {
   background: #151515;
@@ -361,23 +362,65 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-slider {
-  width: 80%;
-  margin: 0 auto;
   position: relative;
+  gap: 40px;
+  width: 80%;
+  height: 50vh;
+  margin: 0 auto;
 }
 
-.skill-slider .item img {
-  width: 50%;
-  margin: 0 auto 15px auto;
+.skill-slider .percent{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform: rotate(270deg);
+  margin-left: 20px;
+  
 }
 
-.background-image-left {
-  top: 28%;
+.skill-slider .percent svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: translateY(25px);
+  
+}
+
+.skill-slider .percent svg circle{
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 14;
+  stroke: white;
+  transform: translate(10px, 10px);
+}
+
+.skill-slider .percent svg circle:nth-child(2){
+  stroke: var(--clr);
+
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+}
+.dot{
   position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
+  inset: 5px;
+  z-index: 10;
+  transform: rotate(calc(3.6deg * var(--num)));
 }
+.dot::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+
+
 
 /************ Projects Css ************/
 .project {
